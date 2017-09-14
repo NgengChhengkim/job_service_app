@@ -12,11 +12,6 @@ export default function (props) {
 }
 
 const styles = {
-  container: {
-    flex: 1,
-    alignItems: "center"
-  },
-
   title: {
     color: color.title,
     fontSize: 20,
