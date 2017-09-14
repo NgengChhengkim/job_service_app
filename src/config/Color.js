@@ -1,5 +1,7 @@
 color ={
-  inputPlaceHolder: "#dddddd",
+  inputTextColor: "#ffffff",
+  inputPlaceHolder: "#9cacaa",
+  inputUnderlineColor: "#dddddd",
   inputBorder: "#dddddd",
   buttonBackground: "#ff4081",
   buttonText: "#ffffff",

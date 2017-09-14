@@ -1,29 +1,12 @@
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
-import TextField from "./component/TextField";
-import ButtonAction from "./component/ButtonAction";
-import FacebookButton from "./component/FacebookButton";
-import Title from "./component/Title";
-
+import { AppRegistry } from 'react-native';
+import RegistrationForm from "./screen/registration";
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <TextField placeholder="name" />
-        <ButtonAction text="sign in" />
-        <FacebookButton text="sign in" />
-        <Title title="Sign up"></Title>
-      </View>
-
+      <RegistrationForm />
     );
-  }
-}
-
-const styles = {
-  container: {
-    padding: 10,
-    flex: 1
   }
 }
 

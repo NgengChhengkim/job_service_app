@@ -4,7 +4,7 @@ import Color from "./../config/Color";
 
 const { buttonBackground, buttonText, buttonBorder } = color;
 
-export default function ButtonAction (props) {
+const ButtonAction = (props) => {
   return (
     <TouchableOpacity style={[styles.button, props.buttonStyle]} onPress={props.onPress}>
       <Text style={[styles.text, props.textStyle]}>{props.text}</Text>
@@ -20,7 +20,9 @@ const styles = {
     height: 40,
     borderRadius: 5,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 10,
+    marginBottom: 10
   },
 
   text: {
@@ -29,3 +31,5 @@ const styles = {
     color: color.buttonText
   }
 }
+
+export { ButtonAction };

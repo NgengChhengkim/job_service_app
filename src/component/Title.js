@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import Color from "./../config/Color";
 
 const { title } = color;
-export default function (props) {
+const Title = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{props.title}</Text>
@@ -13,13 +13,14 @@ export default function (props) {
 
 const styles = {
   container: {
-    flex: 1,
     alignItems: "center"
   },
 
   title: {
     color: color.title,
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold"
   }
 }
+
+export { Title };
