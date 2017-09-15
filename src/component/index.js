@@ -4,3 +4,4 @@ export * from "./Container";
 export * from "./FacebookButton";
 export * from "./TextField";
 export * from "./Title";
+export * from "./SegmentControl";
