@@ -1,4 +1,5 @@
 color ={
+  transperent: "rgba(0,0,0,0)",
   inputTextColor: "#ffffff",
   inputPlaceHolder: "#9cacaa",
   inputUnderlineColor: "#dddddd",
@@ -8,5 +9,6 @@ color ={
   buttonBorder: "#ff4081",
   facebookButtonBackground: "#0085ff",
   facebookButtonBorder: "#0085ff",
-  title: "#ffffff"
+  title: "#ffffff",
+  activeTab: "#ff4081"
 }

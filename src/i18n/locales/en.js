@@ -8,6 +8,10 @@ export default {
     },
     title: "Sign up",
     create: "Create account",
-    sign_up_facebook: "Sign up with facebook"
+    sign_up_facebook: "Sign up with facebook",
+    tabs: {
+      job_seeker: "Job seeker",
+      recruiter: "Recruiter"
+    }
   }
 };
