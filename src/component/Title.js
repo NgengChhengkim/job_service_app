@@ -18,7 +18,7 @@ const styles = {
 
   title: {
     color: color.title,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: "bold"
   }
 }
