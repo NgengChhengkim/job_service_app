@@ -10,5 +10,6 @@ color ={
   facebookButtonBackground: "#0085ff",
   facebookButtonBorder: "#0085ff",
   title: "#ffffff",
-  activeTab: "#ff4081"
+  activeTab: "#ff4081",
+  errorMessage: "#ff4081"
 }

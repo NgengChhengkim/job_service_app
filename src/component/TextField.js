@@ -1,18 +1,21 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { View, TextInput, Text } from "react-native";
 import Color from "./../config/Color";
 
-const { inputPlaceHolder, inputBorder, inputTextColor } = color;
+const { inputPlaceHolder, inputBorder, inputTextColor, errorMessage } = color;
 
 const TextField = (props) => {
   return (
-    <TextInput
-      style={[styles.inputStyle, props.style]}
-      placeholder={props.placeholder}
-      placeholderTextColor={color.inputPlaceHolder}
-      underlineColorAndroid={color.inputUnderlineColor}
-      secureTextEntry={props.secureTextEntry}
-    />
+    <View>
+      <TextInput
+        style= {[styles.inputStyle, props.style]}
+        placeholder={props.placeholder}
+        placeholderTextColor={color.inputPlaceHolder}
+        underlineColorAndroid={(props.errors == "") || (props.errors == undefined) ? color.inputUnderlineColor : color.errorMessage}
+        secureTextEntry={props.secureTextEntry}
+      />
+      <Text style={styles.errorMessage}>{props.errors}</Text>
+    </View>
   );
 }
 
@@ -21,12 +24,17 @@ const styles = {
     borderColor: color.inputBorder,
     height: 40,
     borderRadius: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 5,
     marginBottom: 5,
     color: color.inputTextColor
+  },
+
+  errorMessage: {
+    position: "absolute",
+    bottom: -5,
+    left: 5,
+    color: color.errorMessage
   }
 }
 

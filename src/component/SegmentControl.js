@@ -47,7 +47,8 @@ const styles = {
 
   tabTextStyle: {
     color: color.activeTab,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontSize: 16
   },
 
   tabsContainerStyle: {
