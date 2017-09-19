@@ -5,3 +5,4 @@ export * from "./FacebookButton";
 export * from "./TextField";
 export * from "./Title";
 export * from "./SegmentControl";
+export * from "./Label";

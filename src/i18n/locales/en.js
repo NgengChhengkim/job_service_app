@@ -13,5 +13,16 @@ export default {
       job_seeker: "Job seeker",
       recruiter: "Recruiter"
     }
+  },
+  sign_in: {
+    title: "Welcome",
+    login: "Login",
+    login_with_facebook: "Log in with facebook",
+    placeholder: {
+      email: "Email",
+      password: "Password"
+    },
+    create_new_account: "Create new account",
+    forget_password: "Forget password?"
   }
 };

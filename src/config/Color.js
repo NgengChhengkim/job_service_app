@@ -11,5 +11,6 @@ color ={
   facebookButtonBorder: "#0085ff",
   title: "#ffffff",
   activeTab: "#ff4081",
-  errorMessage: "#ff4081"
+  errorMessage: "#ff4081",
+  label: "#ffffff"
 }
