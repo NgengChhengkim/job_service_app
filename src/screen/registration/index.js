@@ -16,16 +16,16 @@ export default class RegistrationForm extends Component {
     return (
       <BackgroundImage>
         <Container>
-          <Title title={I18n.t("registration.title")}></Title>
-          <TextField placeholder={I18n.t("registration.placeholder.name")}></TextField>
-          <TextField placeholder={I18n.t("registration.placeholder.email")}></TextField>
-          <TextField placeholder={I18n.t("registration.placeholder.password")} secureTextEntry={true}></TextField>
-          <TextField placeholder={I18n.t("registration.placeholder.confirm_password")} secureTextEntry={true}></TextField>
+          <Title title={I18n.t("registration.title")} />
+          <TextField placeholder={I18n.t("registration.placeholder.name")} />
+          <TextField placeholder={I18n.t("registration.placeholder.email")} />
+          <TextField placeholder={I18n.t("registration.placeholder.password")} secureTextEntry={true} />
+          <TextField placeholder={I18n.t("registration.placeholder.confirm_password")} secureTextEntry={true} />
           <SegmentControl values={
             [I18n.t("registration.tabs.job_seeker"), I18n.t("registration.tabs.recruiter")]
-          }></SegmentControl>
-          <ButtonAction text={I18n.t("registration.create")}></ButtonAction>
-          <FacebookButton text={I18n.t("registration.sign_up_facebook")}></FacebookButton>
+          } />
+          <ButtonAction text={I18n.t("registration.create")} />
+          <FacebookButton text={I18n.t("registration.sign_up_facebook")} />
         </Container>
       </BackgroundImage>
     );
