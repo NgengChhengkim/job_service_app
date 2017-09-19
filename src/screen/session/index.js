@@ -11,19 +11,19 @@ import {
   Label
 } from "./../../component";
 
-export default class RegistrationForm extends Component {
+export default class Session extends Component {
   render () {
     return (
       <BackgroundImage>
         <Container>
-          <Title title={I18n.t("sign_in.title")}></Title>
-          <TextField placeholder={I18n.t("sign_in.placeholder.email")}></TextField>
-          <TextField placeholder={I18n.t("sign_in.placeholder.password")} secureTextEntry={true}></TextField>
-          <ButtonAction text={I18n.t("sign_in.login")}></ButtonAction>
-          <FacebookButton text={I18n.t("sign_in.login_with_facebook")}></FacebookButton>
+          <Title title={I18n.t("sign_in.title")} />
+          <TextField placeholder={I18n.t("sign_in.placeholder.email")} />
+          <TextField placeholder={I18n.t("sign_in.placeholder.password")} secureTextEntry={true} />
+          <ButtonAction text={I18n.t("sign_in.login")} />
+          <FacebookButton text={I18n.t("sign_in.login_with_facebook")} />
           <View style={styles.labelContainer}>
-            <Label text={I18n.t("sign_in.create_new_account")}></Label>
-            <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword}></Label>
+            <Label text={I18n.t("sign_in.create_new_account")} />
+            <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword} />
           </View>
         </Container>
       </BackgroundImage>

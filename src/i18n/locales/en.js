@@ -24,5 +24,12 @@ export default {
     },
     create_new_account: "Create new account",
     forget_password: "Forget password?"
+  },
+  reset_password: {
+    title: "Reset password",
+    send_mail: "Send mail",
+    placeholder: {
+      email: "Email"
+    }
   }
 };
