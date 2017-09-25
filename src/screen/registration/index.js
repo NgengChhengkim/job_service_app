@@ -1,33 +1,44 @@
 import React, {Component} from "react";
-import { View, Image } from "react-native";
+import { View, Image, Text} from "react-native";
+import {connect} from "react-redux";
+import Spinner from "react-native-loading-spinner-overlay";
 import I18n from "./../../i18n/i18n";
+import {handleRegistration} from "./../../actions/SignUpActions";
 import {
   BackgroundImage,
   Title,
-  ButtonAction,
-  FacebookButton,
-  TextField,
   Container,
-  SegmentControl
 } from "./../../component";
 
-export default class RegistrationForm extends Component {
+import RegistrationForm from "./RegistrationForm";
+
+class RegistrationScreen extends Component {
+  overlayLoading() {
+    if(this.props.data.loading) {
+      return(
+        <Spinner visible={this.props.data.loading} />
+      )
+    }
+  }
+
   render () {
     return (
       <BackgroundImage>
         <Container>
-          <Title title={I18n.t("registration.title")} />
-          <TextField placeholder={I18n.t("registration.placeholder.name")} />
-          <TextField placeholder={I18n.t("registration.placeholder.email")} />
-          <TextField placeholder={I18n.t("registration.placeholder.password")} secureTextEntry={true} />
-          <TextField placeholder={I18n.t("registration.placeholder.confirm_password")} secureTextEntry={true} />
-          <SegmentControl values={
-            [I18n.t("registration.tabs.job_seeker"), I18n.t("registration.tabs.recruiter")]
-          } />
-          <ButtonAction text={I18n.t("registration.create")} />
-          <FacebookButton text={I18n.t("registration.sign_up_facebook")} />
+          <Title title={I18n.t("registration.title")}></Title>
+          <RegistrationForm onSubmit={(values) => this.props.handleRegistration(values)}/>
+          {this.overlayLoading()}
         </Container>
       </BackgroundImage>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    data: state.signUpData
+  }
+};
+
+const actions = {handleRegistration};
+export default connect(mapStateToProps, actions)(RegistrationScreen);

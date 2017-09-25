@@ -5,16 +5,28 @@ import Color from "./../config/Color";
 const { inputPlaceHolder, inputBorder, inputTextColor, errorMessage } = color;
 
 const TextField = (props) => {
+  const {input, meta, ...inputProps} = props;
+  const invalidMessage = (meta.touched && !meta.active)
+    ? meta.valid ? "" : meta.error
+    : null;
+  const invalidLineColor = (meta.touched && !meta.active)
+    ? meta.valid ? color.inputUnderlineColor : color.errorMessage
+    : null;
+
   return (
     <View>
       <TextInput
         style= {[styles.inputStyle, props.style]}
         placeholder={props.placeholder}
         placeholderTextColor={color.inputPlaceHolder}
-        underlineColorAndroid={(props.errors == "") || (props.errors == undefined) ? color.inputUnderlineColor : color.errorMessage}
+        underlineColorAndroid={invalidLineColor}
         secureTextEntry={props.secureTextEntry}
+        onChangeText={input.onChange}
+        onBlur={input.onBlur}
+        onFocus={input.onFocus}
+        value={input.value}
       />
-      <Text style={styles.errorMessage}>{props.errors}</Text>
+      <Text style={styles.errorMessage}>{invalidMessage}</Text>
     </View>
   );
 }

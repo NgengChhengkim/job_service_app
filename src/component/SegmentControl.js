@@ -5,35 +5,20 @@ import Color from "./../config/Color";
 
 const { activeTab, transperent } = color;
 
-class SegmentControl extends Component {
-  constructor(){
-    super()
-    this.state = {
-      selectedIndex: 0,
-    };
-  }
-
-  handleIndexChange = (index) => {
-    this.setState({
-      selectedIndex: index,
-    });
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <SegmentedControlTab
-          values={this.props.values}
-          selectedIndex={this.state.selectedIndex}
-          onTabPress={this.handleIndexChange}
-          tabStyle={styles.tabStyle}
-          tabTextStyle={styles.tabTextStyle}
-          tabsContainerStyle={styles.tabsContainerStyle}
-          activeTabStyle={styles.activeTabStyle}
-        />
-      </View>
-    );
-  }
+const SegmentControl = (props) => {
+  return (
+    <View style={styles.container}>
+      <SegmentedControlTab
+        values={props.values}
+        selectedIndex={props.selectedIndex}
+        onTabPress={props.onTabPress}
+        tabStyle={styles.tabStyle}
+        tabTextStyle={styles.tabTextStyle}
+        tabsContainerStyle={styles.tabsContainerStyle}
+        activeTabStyle={styles.activeTabStyle}
+      />
+    </View>
+  );
 }
 
 const styles = {
