@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
-import {Provider} from "react-redux";
-import {createStore, applyMiddleware} from "redux";
-import reducers from "./reducers";
-import ReduxThunk from "redux-thunk";
-import RegistrationForm from "./screen/registration";
+import { Navigation } from 'react-native-navigation';
+import { RegisterScreen } from "./screen";
 
-export default class App extends Component {
-  render() {
-    return (
-      <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
-        <RegistrationForm />
-      </Provider>
-    );
+RegisterScreen();
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: "registration.index",
+    navigatorStyle: {
+      navBarHidden: true
+    }
   }
-}
-
-AppRegistry.registerComponent('jobServiceApp', () => App);
+});
