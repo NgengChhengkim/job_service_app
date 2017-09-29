@@ -5,7 +5,7 @@ RegisterScreen();
 
 Navigation.startSingleScreenApp({
   screen: {
-    screen: "registration.index",
+    screen: "session.index",
     navigatorStyle: {
       navBarHidden: true
     }

@@ -40,8 +40,9 @@ export default {
     invalid_email: "Invalid email address",
     password_not_match: "Password not match"
   },
-  server_error: {
+  errors: {
     error500: "Server error 500",
-    connection_error: "Cannot connect to server"
+    connection_error: "Cannot connect to server",
+    something_went_wrong: "Something went wrong"
   }
 };
