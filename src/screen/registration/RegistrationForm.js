@@ -1,6 +1,6 @@
 import React from "react";
 import {reduxForm, Field} from "redux-form";
-import {ScrollView, TouchableOpacity} from "react-native";
+import {View, TouchableOpacity} from "react-native";
 import I18n from "./../../i18n/i18n";
 
 import {
@@ -17,7 +17,7 @@ const maxLength128 = maxLength(128);
 
 const RegistrationForm = (props) => {
   return(
-    <ScrollView keyboardShouldPersistTaps={"handled"}>
+    <View>
       <Field
         name={"name"}
         component={TextField}
@@ -64,7 +64,7 @@ const RegistrationForm = (props) => {
         onPress={props.handleSubmit}
       />
       <FacebookButton text={I18n.t("registration.sign_up_facebook")}></FacebookButton>
-    </ScrollView>
+    </View>
   );
 }
 

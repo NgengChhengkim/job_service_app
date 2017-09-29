@@ -5,9 +5,11 @@ import ReduxThunk from "redux-thunk";
 
 import { Navigation } from 'react-native-navigation';
 import Registration from "./registration";
+import ResetPassword from "./reset_password";
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 export function RegisterScreen() {
   Navigation.registerComponent("registration.index", () => Registration, store, Provider);
+  Navigation.registerComponent("reset_password.index", () => ResetPassword, store, Provider);
 }

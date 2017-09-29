@@ -1,11 +1,13 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
+import Spinner from "react-native-loading-spinner-overlay";
 
 const Container = (props) => {
   return (
-    <View style={styles.container}>
+    <ScrollView keyboardShouldPersistTaps={"handled"} style={styles.container}>
+      <Spinner visible={props.loading} />
       {props.children}
-    </View>
+    </ScrollView>
   );
 }
 
