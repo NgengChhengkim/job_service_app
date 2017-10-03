@@ -19,7 +19,7 @@ const serverValidate = (error, formName, dispatch) => {
     errorResponse = JSON.parse(error._bodyText).errors;
     errorMessage = normalizeErrorResponse(errorResponse);
     if(errorMessage._error) {
-      Alert.alert(errorMessage.error);
+      Alert.alert(errorMessage._error);
     } else {
       dispatch(stopSubmit(formName, errorMessage));
     }

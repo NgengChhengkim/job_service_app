@@ -6,12 +6,12 @@ const { inputPlaceHolder, inputBorder, inputTextColor, errorMessage } = color;
 
 const TextField = (props) => {
   const {input, meta, ...inputProps} = props;
-  const invalidMessage = (meta.touched && !meta.active)
+  const invalidMessage = (meta.touched)
     ? meta.valid ? "" : meta.error
     : null;
-  const invalidLineColor = (meta.touched && !meta.active)
+  const invalidLineColor = (meta.touched)
     ? meta.valid ? color.inputUnderlineColor : color.errorMessage
-    : null;
+    : color.inputUnderlineColor;
 
   return (
     <View>

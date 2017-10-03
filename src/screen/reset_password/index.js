@@ -1,24 +1,31 @@
 import React, {Component} from "react";
-import { View, Image } from "react-native";
+import {connect} from "react-redux";
+import {handleResetPassword} from "./../../actions/ResetPasswordActions";
 import I18n from "./../../i18n/i18n";
 import {
   BackgroundImage,
   Title,
-  ButtonAction,
-  TextField,
   Container,
 } from "./../../component";
+import ResetPasswordForm from "./ResetPasswordForm";
 
-export default class ResetPassword extends Component {
+class ResetPasswordScreen extends Component {
   render () {
     return (
       <BackgroundImage>
-        <Container>
+        <Container loading={this.props.data.loading}>
           <Title title={I18n.t("reset_password.title")} />
-          <TextField placeholder={I18n.t("reset_password.placeholder.email")} />
-          <ButtonAction text={I18n.t("reset_password.send_mail")} />
+          <ResetPasswordForm onSubmit={(values) => this.props.handleResetPassword(values)}/>
         </Container>
       </BackgroundImage>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    data: state.resetPasswordData
+  }
+};
+
+export default connect(mapStateToProps, {handleResetPassword})(ResetPasswordScreen);
