@@ -24,9 +24,11 @@ const serverValidate = (error, formName, dispatch) => {
       dispatch(stopSubmit(formName, errorMessage));
     }
   } else if(error.status == 500) {
-    Alert.alert(I18n.t("server_error.error500"));
+    Alert.alert(I18n.t("errors.error500"));
+  } else if (error.status == 100) {
+    Alert.alert(I18n.t("errors.something_went_wrong"));
   } else {
-    Alert.alert(I18n.t("server_error.connection_error"));
+    Alert.alert(I18n.t("errors.connection_error"));
   }
 }
 
