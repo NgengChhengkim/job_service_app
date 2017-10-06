@@ -9,6 +9,7 @@ export default {
     title: "Sign up",
     create: "Create account",
     sign_up_facebook: "Sign up with facebook",
+    login: "Already have an account?",
     tabs: {
       job_seeker: "Job seeker",
       recruiter: "Recruiter"

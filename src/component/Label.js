@@ -5,7 +5,7 @@ import Color from "./../config/Color";
 const { label } = color;
 const Label = (props) => {
   return (
-    <Text style={[styles.label, props.labelStyle]}>{props.text}</Text>
+    <Text style={[styles.label, props.labelStyle]} onPress={props.onPress}>{props.text}</Text>
   );
 }
 
