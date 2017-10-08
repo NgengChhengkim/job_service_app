@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from "react-native";
 import { ButtonAction } from ".";
 import Color from "./../config/Color";
 
-const { facebookButtonBackground, facebookButtonText, facebookButtonBorder } = color;
+const { facebookButtonBackground, facebookButtonText, facebookButtonBorder } = Color;
 
 const FacebookButton = (props) => {
   return (
@@ -13,8 +13,8 @@ const FacebookButton = (props) => {
 
 const styles = {
   button: {
-    backgroundColor: color.facebookButtonBackground,
-    borderColor: color.facebookButtonBorder,
+    backgroundColor: facebookButtonBackground,
+    borderColor: facebookButtonBorder,
   }
 }
 

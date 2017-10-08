@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import I18n from "./../../i18n/i18n";
 import {handleRegistration} from "./../../actions/SignUpActions";
-import {handleResetScreen} from "./../../actions/OpenScreenActions";
+import {handleResetScreen} from "./../../lib/HandleScreen";
 
 import {
   BackgroundImage,
@@ -21,7 +21,7 @@ class RegistrationScreen extends Component {
           <Title title={I18n.t("registration.title")}></Title>
           <RegistrationForm onSubmit={(values) => this.props.handleRegistration(values)}/>
           <Label text={I18n.t("registration.login")}
-            onPress={() => this.props.handleResetScreen(this.props.navigator, "session.index", true)} />
+            onPress={() => handleResetScreen(this.props.navigator, "session.index", true)} />
         </Container>
       </BackgroundImage>
     );
@@ -34,5 +34,5 @@ const mapStateToProps = state => {
   }
 };
 
-const actions = {handleRegistration, handleResetScreen};
+const actions = {handleRegistration};
 export default connect(mapStateToProps, actions)(RegistrationScreen);

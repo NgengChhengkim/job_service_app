@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, Text } from "react-native";
 import Color from "./../config/Color";
 
-const { buttonBackground, buttonText, buttonBorder } = color;
+const { buttonBackground, buttonText, buttonBorder } = Color;
 
 const ButtonAction = (props) => {
   return (
@@ -14,9 +14,9 @@ const ButtonAction = (props) => {
 
 const styles = {
   button: {
-    backgroundColor: color.buttonBackground,
+    backgroundColor: buttonBackground,
     borderWidth: 1,
-    borderColor: color.buttonBorder,
+    borderColor: buttonBorder,
     height: 40,
     borderRadius: 5,
     justifyContent: "center",
@@ -28,7 +28,7 @@ const styles = {
   text: {
     fontSize: 16,
     fontWeight: "bold",
-    color: color.buttonText
+    color: buttonText
   }
 }
 

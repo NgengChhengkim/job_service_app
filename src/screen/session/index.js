@@ -4,7 +4,7 @@ import I18n from "./../../i18n/i18n";
 import EmailLoginForm from "./EmailLoginForm";
 import {handleLogin} from "./../../actions/LoginActions";
 import {connect} from "react-redux";
-import {handleResetScreen, handlePushScreen} from "./../../actions/OpenScreenActions";
+import {handleResetScreen, handlePushScreen} from "./../../lib/HandleScreen";
 
 import {
   BackgroundImage,
@@ -26,9 +26,9 @@ class Session extends Component {
           <View style={styles.labelContainer}>
 
             <Label text={I18n.t("sign_in.create_new_account")}
-              onPress={() => this.props.handleResetScreen(this.props.navigator, "registration.index", true)} />
+              onPress={() => handleResetScreen(this.props.navigator, "registration.index", true)} />
             <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword}
-              onPress={() => this.props.handlePushScreen(this.props.navigator, "reset_password.index", true)} />
+              onPress={() => handlePushScreen(this.props.navigator, "reset_password.index", true)} />
           </View>
         </Container>
       </BackgroundImage>
@@ -42,7 +42,7 @@ const mapStateToProps = state => {
   }
 };
 
-const actions = {handleLogin, handleResetScreen, handlePushScreen};
+const actions = {handleLogin};
 export default connect(mapStateToProps, actions)(Session);
 
 const styles = {

@@ -45,5 +45,11 @@ export default {
     error500: "Server error 500",
     connection_error: "Cannot connect to server",
     something_went_wrong: "Something went wrong"
+  },
+  tabMenu: {
+    home: "Home",
+    recommended: "Recommended",
+    chat: "Chat",
+    setting: "Setting"
   }
 };
