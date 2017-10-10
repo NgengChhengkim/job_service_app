@@ -68,6 +68,8 @@ export default {
   },
   actions: {
     done: "Done",
-    cancel: "Cancel"
+    cancel: "Cancel",
+    add_to_favorite: "Add to favorite",
+    apply: "Apply"
   }
 };

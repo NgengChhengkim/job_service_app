@@ -15,7 +15,7 @@ const normalizeErrorResponse = (errorResponse) => {
   return errorObj;
 }
 
-const serverValidate = (error, formName, dispatch, navigator) => {
+const serverValidate = (error, formName = "", dispatch = null, navigator = null) => {
   if(error.status == 400) {
     errorResponse = JSON.parse(error._bodyText).errors;
     errorMessage = normalizeErrorResponse(errorResponse);

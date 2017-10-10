@@ -4,11 +4,13 @@ import SignUpReducers from "./SignUpReducers";
 import ResetPasswordReducers from "./ResetPasswordReducers";
 import LoginReducers from "./LoginReducers";
 import CompleteRegistrationRecruiterReducers from "./CompleteRegistrationRecruiterReducers";
+import JobFeedListReducers from "./JobFeedListReducers";
 
 export default combineReducers({
   form: form,
   signUpData: SignUpReducers,
   resetPasswordData: ResetPasswordReducers,
   loginData: LoginReducers,
-  completeRegistrationRecruiterData: CompleteRegistrationRecruiterReducers
+  completeRegistrationRecruiterData: CompleteRegistrationRecruiterReducers,
+  jobFeedListData: JobFeedListReducers
 })
