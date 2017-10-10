@@ -1,8 +1,9 @@
 import {Url} from "./../config/Url";
 import {serverValidate} from "./../lib";
 import {AsyncStorage} from "react-native";
+import {handleResetScreen, switchToTabScreen} from "./../lib/HandleScreen";
 
-export const handleLogin = (values) => {
+export const handleLogin = (values, navigator) => {
   return (dispatch) => {
     dispatch({type: "START_LOGIN"});
 
@@ -25,16 +26,19 @@ export const handleLogin = (values) => {
     })
     .then((responseJson) => {
       try {
-        AsyncStorage.multiSet([["accessToken", responseJson.data.access_token.token],
-          ["refreshToken", responseJson.data.access_token.refresh_token]]);
+        AsyncStorage.multiSet([["accessToken", JSON.stringify(responseJson.data.access_token)],
+            ["user", JSON.stringify(responseJson.data.user)]]);
+        if(responseJson.data.user.completed_account) {
+          switchToTabScreen();
+        } else {
+          handleResetScreen(navigator, "complete_registration.recruiter", true);
+        }
+        dispatch({
+          type: "LOGIN_SUCCESS"
+        });
       } catch (error) {
         throw {status: 100};
       }
-
-      dispatch({
-        type: "LOGIN_SUCCESS",
-        payload: responseJson
-      });
     })
     .catch((error) => {
       serverValidate(error, "Login", dispatch);

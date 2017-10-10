@@ -13,38 +13,8 @@ import {
   FacebookButton,
   TextField,
   Container,
-  Label, InputSelect
+  Label
 } from "./../../component";
-
-const items = [{
-    id: '92iijs7yta',
-    name: 'Ondo',
-  }, {
-    id: 'a0s0a8ssbsd',
-    name: 'Ogun',
-  }, {
-    id: '16hbajsabsd',
-    name: 'Calabar',
-  }, {
-    id: 'nahs75a5sg',
-    name: 'Lagos',
-  }, {
-    id: '667atsas',
-    name: 'Maiduguri',
-  }, {
-    id: 'hsyasajs',
-    name: 'Anambra',
-  }, {
-    id: 'djsjudksjd',
-    name: 'Benue',
-  }, {
-    id: 'sdhyaysdj',
-    name: 'Kaduna',
-  }, {
-    id: 'suudydjsjd',
-    name: 'Abuja',
-  }];
-
 
 class Session extends Component {
   render () {
@@ -52,7 +22,7 @@ class Session extends Component {
       <BackgroundImage>
         <Container loading={this.props.data.loading}>
           <Title title={I18n.t("sign_in.title")} />
-          <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values)}/>
+          <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values, this.props.navigator)}/>
           <View style={styles.labelContainer}>
 
             <Label text={I18n.t("sign_in.create_new_account")}

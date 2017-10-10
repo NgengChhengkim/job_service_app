@@ -11,7 +11,6 @@
     "react-native": "0.48.2",
     "react-native-i18n": "^2.0.6",
     "react-native-loading-spinner-overlay": "^0.5.2",
-    "react-native-multiple-select": "^0.2.7",
     "react-native-navigation": "^1.1.231",
     "react-native-segmented-control-tab": "^3.2.1",
     "react-native-vector-icons": "^4.4.2",
