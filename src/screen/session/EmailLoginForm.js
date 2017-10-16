@@ -1,9 +1,9 @@
 import React from "react";
 import {reduxForm, Field} from "redux-form";
-import {ScrollView} from "react-native";
+import {ScrollView, Button, TouchableOpacity, View, Text} from "react-native";
 import I18n from "./../../i18n/i18n";
-import {TextField, ButtonAction} from "./../../component";
-import {required, emailFormat} from "../../validator";
+import {TextField, ButtonAction, PickerInput} from "./../../component";
+import {required, emailFormat, minSelectItem} from "../../validator";
 
 const EmailLoginForm = (props) => {
   return (
@@ -21,6 +21,14 @@ const EmailLoginForm = (props) => {
         secureTextEntry={true}
         placeholder={I18n.t("sign_in.placeholder.password")}
         validate={[required]}
+      />
+
+      <Field
+        name="locations"
+        component={PickerInput}
+        navigator={props.navigator}
+        data={props.data}
+        validate={minSelectItem}
       />
 
       <ButtonAction

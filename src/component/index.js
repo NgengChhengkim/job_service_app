@@ -6,3 +6,5 @@ export * from "./TextField";
 export * from "./Title";
 export * from "./SegmentControl";
 export * from "./Label";
+export * from "./multiple_picker/PickerInput";
+export * from "./Separator";
