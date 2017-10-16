@@ -1,8 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
-import Color from "./../config/Color";
+import {View, Text} from "react-native";
 
-const { title } = Color;
 const Title = (props) => {
   return (
     <View style={styles.container}>
@@ -17,10 +15,10 @@ const styles = {
   },
 
   title: {
-    color: title,
+    color: "#ffffff",
     fontSize: 30,
     fontWeight: "bold"
   }
 }
 
-export { Title };
+export {Title};

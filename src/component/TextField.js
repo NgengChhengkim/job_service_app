@@ -1,8 +1,5 @@
 import React from "react";
-import { View, TextInput, Text } from "react-native";
-import Color from "./../config/Color";
-
-const { inputPlaceHolder, inputBorder, inputTextColor, inputUnderlineColor, errorMessage } = Color;
+import {View, TextInput, Text} from "react-native";
 
 const TextField = (props) => {
   const {input, meta, ...inputProps} = props;
@@ -10,15 +7,15 @@ const TextField = (props) => {
     ? meta.valid ? "" : meta.error
     : null;
   const invalidLineColor = (meta.touched)
-    ? meta.valid ? inputUnderlineColor : errorMessage
-    : inputUnderlineColor;
+    ? meta.valid ? "#dddddd" : "#ff4081"
+    : "#dddddd";
 
   return (
     <View>
       <TextInput
         style= {[styles.inputStyle, props.style]}
         placeholder={props.placeholder}
-        placeholderTextColor={inputPlaceHolder}
+        placeholderTextColor={"#9cacaa"}
         underlineColorAndroid={invalidLineColor}
         secureTextEntry={props.secureTextEntry}
         onChangeText={input.onChange}
@@ -33,21 +30,21 @@ const TextField = (props) => {
 
 const styles = {
   inputStyle: {
-    borderColor: inputBorder,
+    borderColor: "#dddddd",
     height: 40,
     borderRadius: 5,
     fontSize: 16,
     marginTop: 5,
     marginBottom: 5,
-    color: inputTextColor
+    color: "#ffffff"
   },
 
   errorMessage: {
     position: "absolute",
     bottom: -5,
     left: 5,
-    color: errorMessage
+    color: "#ff4081"
   }
 }
 
-export { TextField };
+export {TextField};

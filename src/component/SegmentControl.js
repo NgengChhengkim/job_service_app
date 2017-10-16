@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-import { View } from "react-native";
+import {View} from "react-native";
 import SegmentedControlTab from "react-native-segmented-control-tab";
-import Color from "./../config/Color";
-
-const { activeTab, transperent } = Color;
 
 const SegmentControl = (props) => {
   return (
@@ -27,23 +24,23 @@ const styles = {
     marginBottom: 10
   },
   tabStyle: {
-    borderColor: activeTab
+    borderColor: "#ff4081"
   },
 
   tabTextStyle: {
-    color: activeTab,
+    color: "#ff4081",
     fontWeight: "bold",
     fontSize: 16
   },
 
   tabsContainerStyle: {
-    backgroundColor: transperent,
+    backgroundColor: "rgba(0,0,0,0)",
     height: 40
   },
 
   activeTabStyle: {
-    backgroundColor: activeTab
+    backgroundColor: "#ff4081"
   }
 }
 
-export { SegmentControl };
+export {SegmentControl};
