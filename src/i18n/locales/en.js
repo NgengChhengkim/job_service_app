@@ -39,7 +39,8 @@ export default {
     max_length: "characters or less",
     min_length: "characters or more",
     invalid_email: "Invalid email address",
-    password_not_match: "Password not match"
+    password_not_match: "Password not match",
+    min_select: "At least 1 item selected"
   },
   errors: {
     error500: "Server error 500",
@@ -61,5 +62,12 @@ export default {
       },
       finish: "Finish"
     }
+  },
+  labels: {
+    please_select: "Please select"
+  },
+  actions: {
+    done: "Done",
+    cancel: "Cancel"
   }
 };
