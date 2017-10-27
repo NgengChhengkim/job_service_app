@@ -13,4 +13,6 @@ const emailFormat = value =>
     ? I18n.t("validator.invalid_email")
     : undefined;
 
-export {required, emailFormat, minLength, maxLength};
+const minSelectItem = values => (values && values.length > 0 ? undefined : I18n.t("validator.min_select"));
+
+export {required, emailFormat, minLength, maxLength, minSelectItem};

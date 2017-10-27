@@ -58,4 +58,23 @@ const switchToTabScreen = () => {
   });
 }
 
-export {handleResetScreen, handlePushScreen, switchToTabScreen};
+const openModal = (navigator, screen, params = {}) => {
+  navigator.showModal({
+    screen: screen,
+    backButtonHidden: true,
+    passProps: params,
+    navigatorStyle: {
+      navBarTextColor: Color.navBarTextColor,
+      navBarButtonColor: Color.navBarTextColor,
+      navBarBackgroundColor: Color.navBarBackgroundColor
+    }
+  })
+}
+
+const closeModal = (navigator) => {
+  navigator.dismissModal({
+    animationType: "slide-down"
+  });
+}
+
+export {handleResetScreen, handlePushScreen, switchToTabScreen, openModal, closeModal};
