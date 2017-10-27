@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import {ScrollView} from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 
 const Container = (props) => {
@@ -17,4 +17,4 @@ const styles = {
   }
 }
 
-export { Container };
+export {Container};

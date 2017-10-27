@@ -1,9 +1,9 @@
 import React from "react";
-import { Image } from "react-native";
+import {Image} from "react-native";
 
 const BackgroundImage = (props) => {
   return (
-    <Image source={require("./../images/background.png")} style={[styles.backgroundImage, props.containerStyle]}>
+    <Image source={require("./../images/background.png")} style={[styles.backgroundImage, props.style]}>
       {props.children}
     </Image>
   );
@@ -18,4 +18,4 @@ const styles = {
   }
 }
 
-export { BackgroundImage };
+export {BackgroundImage};

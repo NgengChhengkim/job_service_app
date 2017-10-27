@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, Button } from "react-native";
+import {View, Button} from "react-native";
 import I18n from "./../../i18n/i18n";
 import EmailLoginForm from "./EmailLoginForm";
 import {handleLogin} from "./../../actions/LoginActions";
@@ -29,7 +29,7 @@ class Session extends Component {
 
             <Label text={I18n.t("sign_in.create_new_account")}
               onPress={() => handleResetScreen(this.props.navigator, "registration.index", true)} />
-            <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword}
+            <Label text={I18n.t("sign_in.forget_password")} style={styles.forgetPassword}
               onPress={() => handlePushScreen(this.props.navigator, "reset_password.index", true)} />
           </View>
         </Container>
