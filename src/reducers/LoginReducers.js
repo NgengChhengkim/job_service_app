@@ -7,7 +7,6 @@ export default LoginReducers = (state = INIT_STATE, action) => {
     case "START_LOGIN":
       return {...state, loading: true};
     case "LOGIN_SUCCESS":
-      return {...state, loading: false};
     case "LOGIN_FAIL":
       return {...state, loading: false};
     default:

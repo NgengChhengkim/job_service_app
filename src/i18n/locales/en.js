@@ -51,5 +51,15 @@ export default {
     recommended: "Recommended",
     chat: "Chat",
     setting: "Setting"
+  },
+  complete_registration: {
+    recruiter: {
+      title: "Complete registration",
+      placeholder: {
+        location: "Location",
+        address: "Address"
+      },
+      finish: "Finish"
+    }
   }
 };

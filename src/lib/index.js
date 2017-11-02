@@ -1,6 +1,7 @@
 import {Alert} from "react-native";
 import {stopSubmit} from "redux-form";
 import I18n from "./../i18n/i18n";
+import {handleResetScreen} from "./HandleScreen";
 
 const normalizeErrorResponse = (errorResponse) => {
   let errorObj = {};
@@ -14,12 +15,16 @@ const normalizeErrorResponse = (errorResponse) => {
   return errorObj;
 }
 
-const serverValidate = (error, formName, dispatch) => {
+const serverValidate = (error, formName, dispatch, navigator) => {
   if(error.status == 400) {
     errorResponse = JSON.parse(error._bodyText).errors;
     errorMessage = normalizeErrorResponse(errorResponse);
     if(errorMessage._error) {
-      Alert.alert(errorMessage._error);
+      if(errorResponse[0].code == 2002) {
+        handleResetScreen(navigator, "session.index", true)
+      } else {
+        Alert.alert(errorMessage._error);
+      }
     } else {
       dispatch(stopSubmit(formName, errorMessage));
     }
