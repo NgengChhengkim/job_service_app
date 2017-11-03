@@ -7,13 +7,31 @@ import {
   InputSelect,
   ButtonAction,
   TextField,
+  PickerInput
 } from "./../../component";
 
-import {required} from "../../validator";
+import {required, minSelectItem} from "../../validator";
 
 const CompleteRegistrationRecruiterForm = (props) => {
   return(
     <View>
+      <Field
+        name={"job_types"}
+        component={PickerInput}
+        navigator={props.navigator}
+        data={props.jobTypeData}
+        validate={minSelectItem}
+      />
+
+      <Field
+        name={"location"}
+        component={PickerInput}
+        navigator={props.navigator}
+        data={props.jobTypeData}
+        validate={minSelectItem}
+        singleSelect={true}
+      />
+
       <Field
         name={"address"}
         component={TextField}

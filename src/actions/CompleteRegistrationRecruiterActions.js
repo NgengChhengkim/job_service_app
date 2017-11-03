@@ -7,8 +7,7 @@ import {AsyncStorage} from "react-native";
 export const handleCompleteRegistrationRecruiter = (values, navigator) => {
   return (dispatch) => {
     dispatch({type: "START_COMPLETE_RECRUITER_REGISTRATION"});
-
-    ServerRequestWithToken("/api/v1/complete_registration/user", "PUT", {...values, gender: "male"})
+    ServerRequestWithToken("/api/v1/complete_registration/user", "PUT", formValue(values))
     .then((response) => {
       try {
         AsyncStorage.setItem("user", JSON.stringify(response.data));
@@ -24,7 +23,14 @@ export const handleCompleteRegistrationRecruiter = (values, navigator) => {
       dispatch({
         type: "COMPLETE_RECRUITER_REGISTRATION_FAIL"
       });
-      serverValidate(error, "CompleteRegistrationRecruiter", dispatch, navigator);
+      serverValidate(error, "CompleteRegistrationRecruiterForm", dispatch, navigator);
     });
   }
+}
+
+function formValue(values) {
+  values["job_type_ids"] = values["job_types"].map(value => value.id)
+  values["location_id"] = values["location"]["id"]
+
+  return {...values, gender: "male"}
 }
