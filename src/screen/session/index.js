@@ -22,7 +22,7 @@ class Session extends Component {
       <BackgroundImage>
         <Container loading={this.props.data.loading}>
           <Title title={I18n.t("sign_in.title")} />
-          <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values, this.props.navigator)} navigator={this.props.navigator}/>
+          <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values, this.props.navigator)} />
           <View style={styles.labelContainer}>
 
             <Label text={I18n.t("sign_in.create_new_account")}
