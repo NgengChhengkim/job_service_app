@@ -64,7 +64,8 @@ export default {
     }
   },
   labels: {
-    please_select: "Please select"
+    please_select: "Please select",
+    selected: "selected"
   },
   actions: {
     done: "Done",
