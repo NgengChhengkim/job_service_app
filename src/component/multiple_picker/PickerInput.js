@@ -12,12 +12,18 @@ class PickerInput extends Component {
     super(props);
   }
 
+  renderItemRow(item) {
+    return (
+      <Text key={item.id} style={styles.item}>{item.name}</Text>
+    );
+  }
+
   renderSelectedItems(items) {
-    if(items.length > 0) {
+    if(this.props.singleSelect && Object.keys(items).length > 0) {
+      return this.renderItemRow(items);
+    } else if(items.length > 0) {
       return items.map((item, key) => {
-        return (
-          <Text key={item.id} style={styles.item}>{item.name}</Text>
-        );
+        return this.renderItemRow(item);
       })
     } else {
       return(
@@ -42,8 +48,10 @@ class PickerInput extends Component {
 
   render() {
     const {input, meta, ...inputProps} = this.props;
+    input.value = input.value || [];
+
     return (
-      <TouchableOpacity onPress={() => openModal(this.props.navigator, "multiple_picker.screen", {input: input, data: this.props.data})}>
+      <TouchableOpacity onPress={() => openModal(this.props.navigator, "multiple_picker.screen", {input: input, data: this.props.data, singleSelect: this.props.singleSelect})}>
         <View style={[styles.container, {borderBottomColor: this.invalidLineColor(meta)}]}>
           <View style={styles.itemContainer}>{this.renderSelectedItems(input.value)}</View>
           <View style={styles.icon}>

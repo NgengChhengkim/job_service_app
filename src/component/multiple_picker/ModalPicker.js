@@ -12,10 +12,10 @@ export default class ModalPicker extends Component {
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
 
     this.state = {
-      selectedItems: props.input.value || []
+      selectedItems: props.input.value
     };
 
-    this.setNavbarTitle(props.input.value.length);
+    this.setNavbarTitle(this.state.selectedItems);
   }
 
   static navigatorButtons = {
@@ -33,9 +33,19 @@ export default class ModalPicker extends Component {
     ]
   };
 
-  setNavbarTitle(count) {
+  setNavbarTitle(value) {
+    let title;
+    if(this.props.singleSelect) {
+      if(Object.keys(value).length == 0) {
+        title = I18n.t("labels.please_select");
+      } else {
+        title = value.name;
+      }
+    } else {
+      title = `${value.length} ${I18n.t("labels.selected")}`;
+    }
     this.props.navigator.setTitle({
-      title: `${count} selected`
+      title: title
     });
   }
 
@@ -44,7 +54,8 @@ export default class ModalPicker extends Component {
   }
 
   displayIcon(item) {
-    if(this.state.selectedItems.some(element => element.id == item.id)) {
+    if((this.props.singleSelect && this.state.selectedItems.id == item.id) ||
+      (!this.props.singleSelect && this.state.selectedItems.some(element => element.id == item.id))) {
       return(
         <Icon name="check" size={30} color={Color.buttonBackground} size={12} style={styles.icon}/>
       )
@@ -54,17 +65,27 @@ export default class ModalPicker extends Component {
   }
 
   onItemSelect(item) {
-    let selectedItems = this.state.selectedItems;
-    let exist = selectedItems.some(element => element.id == item.id);
-    let index = selectedItems.indexOf(item);
-    if(exist) {
-      selectedItems = this.removeItem(selectedItems, item);
+    let selectedItems;
+
+    if(this.props.singleSelect) {
+      if(this.state.selectedItems.id == item.id) {
+        selectedItems = [];
+      } else {
+        selectedItems = item;
+      }
     } else {
-      selectedItems = [...selectedItems, item];
+      selectedItems = this.state.selectedItems;
+      let exist = selectedItems.some(element => element.id == item.id);
+      let index = selectedItems.indexOf(item);
+      if(exist) {
+        selectedItems = this.removeItem(selectedItems, item);
+      } else {
+        selectedItems = [...selectedItems, item];
+      }
     }
 
     this.setState({selectedItems: selectedItems});
-    this.setNavbarTitle(selectedItems.length);
+    this.setNavbarTitle(selectedItems);
   }
 
   renderItem(item) {
