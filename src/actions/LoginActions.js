@@ -31,7 +31,7 @@ export const handleLogin = (values, navigator) => {
         if(responseJson.data.user.completed_account) {
           switchToTabScreen();
         } else {
-          handleResetScreen(navigator, "complete_registration.recruiter", true);
+          handleResetScreen(navigator, "complete_registration.index", true, {user_type: responseJson.data.user.type});
         }
         dispatch({
           type: "LOGIN_SUCCESS"

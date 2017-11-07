@@ -3,12 +3,12 @@ import { reducer as form } from 'redux-form';
 import SignUpReducers from "./SignUpReducers";
 import ResetPasswordReducers from "./ResetPasswordReducers";
 import LoginReducers from "./LoginReducers";
-import CompleteRegistrationRecruiterReducers from "./CompleteRegistrationRecruiterReducers";
+import CompleteRegistrationReducers from "./CompleteRegistrationReducers";
 
 export default combineReducers({
   form: form,
   signUpData: SignUpReducers,
   resetPasswordData: ResetPasswordReducers,
   loginData: LoginReducers,
-  completeRegistrationRecruiterData: CompleteRegistrationRecruiterReducers
+  completeRegistrationData: CompleteRegistrationReducers
 })

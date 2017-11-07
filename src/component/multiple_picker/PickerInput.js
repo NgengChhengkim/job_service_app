@@ -27,7 +27,7 @@ class PickerInput extends Component {
       })
     } else {
       return(
-        <Text style={styles.text}>{I18n.t("labels.please_select")}</Text>
+        <Text style={styles.text}>{this.props.placeholder}</Text>
       )
     }
   }

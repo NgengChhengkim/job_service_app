@@ -3,12 +3,13 @@ import { iconsMap, iconsLoaded } from "./../config/Icons";
 import Color from "./../config/Color";
 import I18n from "./../i18n/i18n";
 
-const handleResetScreen = (navigator, screen, navBarHidden = false) => {
+const handleResetScreen = (navigator, screen, navBarHidden = false, props = {}) => {
   navigator.resetTo({
     screen: screen,
     navigatorStyle: {
       navBarHidden: navBarHidden
-    }
+    },
+    passProps: props
   });
 }
 

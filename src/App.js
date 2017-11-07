@@ -14,12 +14,15 @@ AsyncStorage.getItem("accessToken").then(accessToken => {
       } else {
         Navigation.startSingleScreenApp({
           screen: {
-            screen: "complete_registration.recruiter",
+            screen: "complete_registration.index",
             navigatorStyle: {
               navBarHidden: true
             }
+          },
+          passProps: {
+            user_type: user.type
           }
-        })
+        });
       }
     })
   } else {

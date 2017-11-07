@@ -53,14 +53,14 @@ export default {
     setting: "Setting"
   },
   complete_registration: {
-    recruiter: {
-      title: "Complete registration",
-      placeholder: {
-        location: "Location",
-        address: "Address"
-      },
-      finish: "Finish"
-    }
+    title: "Complete registration",
+    placeholder: {
+      location: "Location",
+      address: "Address",
+      job_type: "Job type",
+      gender: "Gender"
+    },
+    finish: "Finish"
   },
   labels: {
     please_select: "Please select",

@@ -4,7 +4,7 @@ import {switchToTabScreen} from "./../lib/HandleScreen";
 import {ServerRequestWithToken} from "./../lib/ApiRequest";
 import {AsyncStorage} from "react-native";
 
-export const handleCompleteRegistrationRecruiter = (values, navigator) => {
+export const handleCompleteRegistration = (values, navigator) => {
   return (dispatch) => {
     dispatch({type: "START_COMPLETE_RECRUITER_REGISTRATION"});
     ServerRequestWithToken("/api/v1/complete_registration/user", "PUT", formValue(values))
@@ -23,7 +23,7 @@ export const handleCompleteRegistrationRecruiter = (values, navigator) => {
       dispatch({
         type: "COMPLETE_RECRUITER_REGISTRATION_FAIL"
       });
-      serverValidate(error, "CompleteRegistrationRecruiterForm", dispatch, navigator);
+      serverValidate(error, "CompleteRegistrationForm", dispatch, navigator);
     });
   }
 }
@@ -31,6 +31,7 @@ export const handleCompleteRegistrationRecruiter = (values, navigator) => {
 function formValue(values) {
   values["job_type_ids"] = values["job_types"].map(value => value.id)
   values["location_id"] = values["location"]["id"]
+  values["gender"] = values["gender"]["id"]
 
-  return {...values, gender: "male"}
+  return {...values, gender: values["gender"] || "male"}
 }
