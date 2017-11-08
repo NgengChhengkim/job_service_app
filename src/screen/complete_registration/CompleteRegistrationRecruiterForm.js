@@ -11,6 +11,7 @@ import {
 } from "./../../component";
 
 import {required, minSelectItem} from "../../validator";
+let minSelectItem1 = minSelectItem(1);
 
 const CompleteRegistrationRecruiterForm = (props) => {
   return(
@@ -20,7 +21,7 @@ const CompleteRegistrationRecruiterForm = (props) => {
         component={PickerInput}
         navigator={props.navigator}
         data={props.jobTypeData}
-        validate={minSelectItem}
+        validate={minSelectItem1}
       />
 
       <Field
@@ -28,7 +29,7 @@ const CompleteRegistrationRecruiterForm = (props) => {
         component={PickerInput}
         navigator={props.navigator}
         data={props.jobTypeData}
-        validate={minSelectItem}
+        validate={minSelectItem1}
         singleSelect={true}
       />
 

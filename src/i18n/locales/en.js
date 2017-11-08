@@ -35,12 +35,11 @@ export default {
   },
   validator: {
     required: "Required",
-    must_be: "Must be",
-    max_length: "characters or less",
-    min_length: "characters or more",
+    max_length: "Must be {{max}} characters or less",
+    min_length: "Must be {{min}} characters or more",
     invalid_email: "Invalid email address",
     password_not_match: "Password not match",
-    min_select: "At least 1 item selected"
+    min_select: "At least {{min}} item selected"
   },
   errors: {
     error500: "Server error 500",
