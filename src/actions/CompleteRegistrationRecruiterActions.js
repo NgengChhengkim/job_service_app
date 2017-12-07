@@ -14,7 +14,7 @@ export const handleCompleteRegistrationRecruiter = (values, navigator) => {
         dispatch({
           type: "COMPLETE_RECRUITER_REGISTRATION_SUCCESS"
         });
-        switchToTabScreen();
+        setTimeout(() => switchToTabScreen(), 100);
       } catch (error) {
         throw {status: 100};
       }

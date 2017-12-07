@@ -12,12 +12,9 @@ import ResetPasswordForm from "./ResetPasswordForm";
 class ResetPasswordScreen extends Component {
   render () {
     return (
-      <BackgroundImage>
-        <Container loading={this.props.data.loading}>
-          <Title title={I18n.t("reset_password.title")} />
-          <ResetPasswordForm onSubmit={(values) => this.props.handleResetPassword(values)}/>
-        </Container>
-      </BackgroundImage>
+      <Container loading={this.props.data.loading}>
+        <ResetPasswordForm onSubmit={(values) => this.props.handleResetPassword(values)}/>
+      </Container>
     );
   }
 }

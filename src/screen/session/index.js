@@ -19,19 +19,17 @@ import {
 class Session extends Component {
   render () {
     return (
-      <BackgroundImage>
-        <Container loading={this.props.data.loading}>
-          <Title title={I18n.t("sign_in.title")} />
-          <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values, this.props.navigator)} />
-          <View style={styles.labelContainer}>
+      <Container loading={this.props.data.loading}>
+        <Title title={I18n.t("sign_in.title")} />
+        <EmailLoginForm onSubmit={(values) => this.props.handleLogin(values, this.props.navigator)} />
+        <View style={styles.labelContainer}>
 
-            <Label text={I18n.t("sign_in.create_new_account")}
-              onPress={() => handleResetScreen(this.props.navigator, "registration.index", true)} />
-            <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword}
-              onPress={() => handlePushScreen(this.props.navigator, "reset_password.index", true)} />
-          </View>
-        </Container>
-      </BackgroundImage>
+          <Label text={I18n.t("sign_in.create_new_account")}
+            onPress={() => handleResetScreen(this.props.navigator, "registration.index", true)} />
+          <Label text={I18n.t("sign_in.forget_password")} labelStyle={styles.forgetPassword}
+            onPress={() => handlePushScreen(this.props.navigator, "reset_password.index", I18n.t("reset_password.title"))} />
+        </View>
+      </Container>
     );
   }
 }
