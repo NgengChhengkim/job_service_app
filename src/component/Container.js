@@ -1,11 +1,11 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
+import {LoadingModal} from "./";
 
 const Container = (props) => {
   return (
     <ScrollView keyboardShouldPersistTaps={"handled"} style={styles.container}>
-      <Spinner visible={props.loading} />
+      <LoadingModal visible={props.loading} />
       {props.children}
     </ScrollView>
   );
@@ -13,7 +13,8 @@ const Container = (props) => {
 
 const styles = {
   container: {
-    padding: 30
+    padding: 30,
+    backgroundColor: "#013851"
   }
 }
 

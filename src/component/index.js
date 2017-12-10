@@ -14,3 +14,4 @@ export * from "./card/Card";
 export * from "./card/CardHeader";
 export * from "./card/CardAction";
 export * from "./card/IconActionButton";
+export * from "./LoadingModal";

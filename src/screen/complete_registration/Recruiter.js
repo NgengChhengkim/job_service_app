@@ -14,12 +14,10 @@ const a = [{id: 1, name: "a"}, {id: 2, name: "b"}, {id: 3, name: "c"}]
 class Recruiter extends Component {
   render () {
     return (
-      <BackgroundImage>
-        <Container loading={this.props.data.loading}>
-          <Title title={I18n.t("complete_registration.recruiter.title")} />
-          <CompleteRegistrationRecruiterForm jobTypeData={a} locationData={a} navigator={this.props.navigator} onSubmit={(values) => this.props.handleCompleteRegistrationRecruiter(values, this.props.navigator)}/>
-        </Container>
-      </BackgroundImage>
+      <Container loading={this.props.data.loading}>
+        <Title title={I18n.t("complete_registration.recruiter.title")} />
+        <CompleteRegistrationRecruiterForm jobTypeData={a} locationData={a} navigator={this.props.navigator} onSubmit={(values) => this.props.handleCompleteRegistrationRecruiter(values, this.props.navigator)}/>
+      </Container>
     );
   }
 }

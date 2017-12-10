@@ -29,7 +29,7 @@ export const handleLogin = (values, navigator) => {
         AsyncStorage.multiSet([["accessToken", JSON.stringify(responseJson.data.access_token)],
             ["user", JSON.stringify(responseJson.data.user)]]);
         if(responseJson.data.user.completed_account) {
-          switchToTabScreen();
+          setTimeout(() => switchToTabScreen(), 100);
         } else {
           handleResetScreen(navigator, "complete_registration.recruiter", true);
         }

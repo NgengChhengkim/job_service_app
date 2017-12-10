@@ -23,17 +23,17 @@ const serverValidate = (error, formName = "", dispatch = null, navigator = null)
       if(errorResponse[0].code == 2002) {
         handleResetScreen(navigator, "session.index", true)
       } else {
-        Alert.alert(errorMessage._error);
+        setTimeout(() => Alert.alert(errorMessage._error), 100);
       }
     } else {
       dispatch(stopSubmit(formName, errorMessage));
     }
   } else if(error.status == 500) {
-    Alert.alert(I18n.t("errors.error500"));
+    setTimeout(() => Alert.alert(I18n.t("errors.error500")), 100);
   } else if (error.status == 100) {
-    Alert.alert(I18n.t("errors.something_went_wrong"));
+    setTimeout(() => Alert.alert(I18n.t("errors.something_went_wrong")), 100);
   } else {
-    Alert.alert(I18n.t("errors.connection_error"));
+    setTimeout(() => Alert.alert(I18n.t("errors.connection_error")), 100);
   }
 }
 

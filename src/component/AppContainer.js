@@ -1,11 +1,11 @@
 import React from "react";
 import {View} from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
+import {LoadingModal} from "./";
 
 const AppContainer = (props) => {
   return (
     <View style={[styles.container, props.style]}>
-      <Spinner visible={props.loading} />
+      <LoadingModal visible={props.loading} />
       {props.children}
     </View>
   );
