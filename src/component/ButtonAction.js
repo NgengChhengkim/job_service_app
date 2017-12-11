@@ -1,12 +1,9 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
-import Color from "./../config/Color";
-
-const { buttonBackground, buttonText, buttonBorder } = Color;
+import {TouchableOpacity, Text} from "react-native";
 
 const ButtonAction = (props) => {
   return (
-    <TouchableOpacity style={[styles.button, props.buttonStyle]} onPress={props.onPress}>
+    <TouchableOpacity style={[styles.button, props.style]} onPress={props.onPress}>
       <Text style={[styles.text, props.textStyle]}>{props.text}</Text>
     </TouchableOpacity>
   );
@@ -14,9 +11,9 @@ const ButtonAction = (props) => {
 
 const styles = {
   button: {
-    backgroundColor: buttonBackground,
+    backgroundColor: "#ff4081",
     borderWidth: 1,
-    borderColor: buttonBorder,
+    borderColor: "#ff4081",
     height: 40,
     borderRadius: 5,
     justifyContent: "center",
@@ -28,8 +25,8 @@ const styles = {
   text: {
     fontSize: 16,
     fontWeight: "bold",
-    color: buttonText
+    color: "#ffffff"
   }
 }
 
-export { ButtonAction };
+export {ButtonAction};

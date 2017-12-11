@@ -1,11 +1,8 @@
 import React, {Component} from "react";
 import {View, Text, TouchableOpacity} from "react-native";
-import Color from "./../../config/Color";
 import I18n from "./../../i18n/i18n";
 import {openModal} from "./../../lib/HandleScreen";
 import Icon from "react-native-vector-icons/FontAwesome";
-
-const {inputPlaceHolder, inputBorder, inputUnderlineColor, errorMessage, buttonBackground, inputTextColor} = Color;
 
 class PickerInput extends Component {
   constructor(props) {
@@ -40,9 +37,9 @@ class PickerInput extends Component {
 
   invalidLineColor(meta) {
     if(meta.touched && !meta.valid) {
-      return errorMessage;
+      return "#ff4081";
     } else {
-      return inputUnderlineColor;
+      return "#dddddd";
     }
   }
 
@@ -70,7 +67,7 @@ const styles = {
     flexDirection: "row",
     padding: 3,
     borderBottomWidth: 1,
-    borderBottomColor: inputBorder,
+    borderBottomColor: "#dddddd",
     minHeight: 30
   },
   itemContainer: {
@@ -84,8 +81,8 @@ const styles = {
     paddingLeft: 5,
     paddingRight: 5,
     margin: 2,
-    backgroundColor: buttonBackground,
-    color: inputTextColor,
+    backgroundColor: "#ff4081",
+    color: "#ffffff",
     borderRadius: 5
   },
   icon: {
@@ -94,10 +91,10 @@ const styles = {
   },
   errorMessage: {
     left: 5,
-    color: errorMessage
+    color: "#ff4081"
   },
   text: {
-    color: inputPlaceHolder,
+    color: "#9cacaa",
     fontSize: 16
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView } from "react-native";
+import {ScrollView} from "react-native";
 import {LoadingModal} from "./";
 
 const Container = (props) => {
@@ -18,4 +18,4 @@ const styles = {
   }
 }
 
-export { Container };
+export {Container};

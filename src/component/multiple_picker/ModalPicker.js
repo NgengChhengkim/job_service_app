@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import I18n from "./../../i18n/i18n";
 import {View, Text, FlatList, TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import Color from "./../../config/Color";
 import {closeModal} from "./../../lib/HandleScreen";
 import {Separator} from "./../../component";
 
@@ -57,7 +56,7 @@ export default class ModalPicker extends Component {
     if((this.props.singleSelect && this.state.selectedItems.id == item.id) ||
       (!this.props.singleSelect && this.state.selectedItems.some(element => element.id == item.id))) {
       return(
-        <Icon name="check" size={30} color={Color.buttonBackground} size={12} style={styles.icon}/>
+        <Icon name="check" size={30} color={"#ff4081"} size={12} style={styles.icon}/>
       )
     } else {
       return null;

@@ -1,6 +1,5 @@
-import { Navigation } from "react-native-navigation";
-import { iconsMap, iconsLoaded } from "./../config/Icons";
-import Color from "./../config/Color";
+import {Navigation} from "react-native-navigation";
+import {iconsMap, iconsLoaded} from "./../config/Icons";
 import I18n from "./../i18n/i18n";
 
 const handleResetScreen = (navigator, screen, navBarHidden = false) => {
@@ -50,9 +49,9 @@ const switchToTabScreen = () => {
       ],
       appStyle: {
         forceTitlesDisplay: true,
-        tabBarBackgroundColor: Color.tabBarBackgroundColor,
-        navBarTextColor: Color.navBarTextColor,
-        navBarBackgroundColor: Color.navBarBackgroundColor
+        tabBarBackgroundColor: "#ffffff",
+        navBarTextColor: "#ffffff",
+        navBarBackgroundColor: "#ff4081"
       }
     });
   });
@@ -64,9 +63,9 @@ const openModal = (navigator, screen, params = {}) => {
     backButtonHidden: true,
     passProps: params,
     navigatorStyle: {
-      navBarTextColor: Color.navBarTextColor,
-      navBarButtonColor: Color.navBarTextColor,
-      navBarBackgroundColor: Color.navBarBackgroundColor
+      navBarTextColor: "#ffffff",
+      navBarButtonColor: "#ffffff",
+      navBarBackgroundColor: "#ff4081"
     }
   })
 }
